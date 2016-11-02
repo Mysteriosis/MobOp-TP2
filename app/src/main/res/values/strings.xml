@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MediaPlayer</string>
+    <string name="format_text">%s</string>
+</resources>
