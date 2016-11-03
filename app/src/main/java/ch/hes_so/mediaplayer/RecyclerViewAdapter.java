@@ -1,6 +1,7 @@
 package ch.hes_so.mediaplayer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private SongListManager songListManager;
+    private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
@@ -37,6 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public RecyclerViewAdapter(Context context)
     {
         this.songListManager = new SongListManager(context);
+        this.context = context;
     }
 
 
@@ -47,7 +50,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("TOTO", "TITI" + v.getTag());
+                Intent intent = new Intent(context, MediaPlayerActivity.class);
+                intent.putExtra("SONG_INDEX", (Integer)v.getTag());
+                context.startActivity(intent);
             }
         });
         ViewHolder vh = new ViewHolder(v);
@@ -59,7 +64,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         RecyclerViewAdapter.ViewHolder holder = (RecyclerViewAdapter.ViewHolder)h;
         holder.title.setText(this.songListManager.getTitle(position));
         holder.artist.setText(this.songListManager.getArtist(position));
-        holder.layout.setTag("Test " + this.songListManager.getTitle(position));
+        holder.layout.setTag(position);
         try {
             if(this.songListManager.getArtwork(position) != null)
                 holder.image.setImageBitmap(this.songListManager.getArtwork(position));
