@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.AdapterView;
 
 public class PlayListActivity extends AppCompatActivity {
-
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
