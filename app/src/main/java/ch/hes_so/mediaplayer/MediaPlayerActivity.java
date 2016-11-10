@@ -198,6 +198,7 @@ public class MediaPlayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View viewParam) {
                 mediaPlayer.stop();
+                current_time.setText("00:00:00");
 
                 if (!stopped) {
                     stopped = true;

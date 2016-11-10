@@ -2,9 +2,6 @@ package ch.hes_so.mediaplayer;
 
 import android.graphics.Bitmap;
 
-/**
- * Created by Pascal Bruegger on 08/01/16.
- */
 public class Song {
 
     private String songTitle;

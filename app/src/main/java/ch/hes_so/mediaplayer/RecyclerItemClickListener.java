@@ -1,9 +1,5 @@
 package ch.hes_so.mediaplayer;
 
-/**
- * Created by Pascal Bruegger on 03/02/16.
- */
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;

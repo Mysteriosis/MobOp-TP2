@@ -1,16 +1,5 @@
 package ch.hes_so.mediaplayer;
 
-/**************************************************
- * EIA - FR
- * <p/>
- * Author:
- * Pascal Bruegger
- * <p/>
- * Media Player
- * ------------
- * SongListManager.java
- **************************************************/
-
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
